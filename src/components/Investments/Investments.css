@@ -1,0 +1,387 @@
+.investments {
+  padding: 30px;
+  min-height: calc(100vh - 80px);
+  transition: all 0.3s ease;
+}
+
+.investments.dark {
+  background: #0f0f0f;
+  color: #e0e0e0;
+}
+
+.investments.light {
+  color: #333;
+}
+
+.investments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.investments-header h2 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.investments-header p {
+  opacity: 0.7;
+}
+
+.time-range-selector {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid;
+  font-size: 1rem;
+}
+
+.investments.dark .time-range-selector {
+  background: #2a2a2a;
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+.investments.light .time-range-selector {
+  background: #ffe4c4;
+  border-color: #ccc;
+  color: #333;
+}
+
+.net-worth-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.net-worth-card {
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid;
+  text-align: center;
+}
+
+.investments.dark .net-worth-card {
+  color: white;
+  background: linear-gradient(to right, darkblue, blue);
+  border-color: darkblue;
+}
+
+.investments.light .net-worth-card {
+  color: white;
+  background: linear-gradient(to right, darkblue, blue);
+  border-color: darkblue;
+}
+
+.net-worth-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.net-worth-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.net-worth-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.breakdown-item .positive {
+  color: #6BCB77;
+  font-weight: 700;
+}
+
+.breakdown-item .negative {
+  color: #FF6B6B;
+  font-weight: 700;
+}
+
+.net-worth-chart {
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid;
+}
+
+.investments.dark .net-worth-chart {
+  background: #1a1a1a;
+  border-color: #333;
+}
+
+.investments.light .net-worth-chart {
+  background: #ffe4c4;
+  border-color: #ddd;
+}
+
+.net-worth-chart h3 {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.allocation-section {
+  margin-bottom: 40px;
+}
+
+.allocation-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.allocation-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.allocation-chart {
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.investments.dark .allocation-chart {
+  background: #1a1a1a;
+  border-color: #333;
+}
+
+.investments.light .allocation-chart {
+  background: #ffe4c4;
+  border-color: #ddd;
+}
+
+.allocation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.allocation-item {
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid;
+}
+
+.investments.dark .allocation-item {
+  background: #1a1a1a;
+  border-color: #333;
+}
+
+.investments.light .allocation-item {
+  background: #ffe4c4;
+  border-color: #ddd;
+}
+
+.allocation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.allocation-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.allocation-percent {
+  font-weight: 700;
+  color: #667eea;
+  font-size: 1.2rem;
+}
+
+.allocation-bar {
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.investments.dark .allocation-bar {
+  background: #2a2a2a;
+}
+
+.investments.light .allocation-bar {
+  background: #e0e0e0;
+}
+
+.allocation-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.allocation-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.drift-alerts,
+.missed-investments {
+  margin-bottom: 30px;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid;
+}
+
+.investments.dark .drift-alerts,
+.investments.dark .missed-investments {
+  background: #1a1a1a;
+  border-color: #333;
+}
+
+.investments.light .drift-alerts,
+.investments.light .missed-investments {
+  background: #ffe4c4;
+  border-color: #ddd;
+}
+
+.drift-alerts h3,
+.missed-investments h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.section-description {
+  opacity: 0.7;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.drift-alert {
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid;
+  margin-bottom: 15px;
+}
+
+.investments.dark .drift-alert {
+  background: #252525;
+  border-left-color: #FFA726;
+}
+
+.investments.light .drift-alert {
+  background: #ffe4c4;
+  border-left-color: #FFA726;
+}
+
+.drift-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.drift-type {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.drift-status {
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.drift-status.over {
+  background: rgba(255, 107, 107, 0.2);
+  color: #FF6B6B;
+}
+
+.drift-status.under {
+  background: rgba(77, 150, 255, 0.2);
+  color: #4D96FF;
+}
+
+.drift-details {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.drift-recommendation {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  background: rgba(255, 167, 38, 0.1);
+  color: #FFA726;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.missed-alert {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #FF6B6B;
+  background: rgba(255, 107, 107, 0.1);
+}
+
+.alert-icon {
+  font-size: 2rem;
+}
+
+.alert-content h4 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: #FF6B6B;
+}
+
+.alert-content p {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.alert-date {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  opacity: 0.6;
+  font-style: italic;
+}
+
+@media (max-width: 1024px) {
+
+  .net-worth-section,
+  .allocation-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .investments {
+    padding: 20px;
+  }
+}

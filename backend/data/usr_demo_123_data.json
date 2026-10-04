@@ -1,0 +1,118 @@
+{
+  "assets": [
+    {
+      "id": 101,
+      "name": "HDFC Savings Account",
+      "type": "cash",
+      "purchasePrice": 50000,
+      "currentValue": 65000,
+      "quantity": 1
+    },
+    {
+      "id": 102,
+      "name": "Nifty 50 Index Fund",
+      "type": "mutual_fund",
+      "purchasePrice": 120000,
+      "currentValue": 145000,
+      "quantity": 1
+    },
+    {
+      "id": 103,
+      "name": "Tata Motors Shares",
+      "type": "stock",
+      "purchasePrice": 45000,
+      "currentValue": 54000,
+      "quantity": 50
+    },
+    {
+      "id": 104,
+      "name": "Sovereign Gold Bonds",
+      "type": "gold",
+      "purchasePrice": 60000,
+      "currentValue": 72000,
+      "quantity": 10
+    }
+  ],
+  "transactions": [
+    {
+      "id": 201,
+      "date": "2026-09-01",
+      "merchant": "Monthly Salary",
+      "amount": 85000,
+      "type": "income",
+      "category": "Salary"
+    },
+    {
+      "id": 202,
+      "date": "2026-09-03",
+      "merchant": "Apartment Rent",
+      "amount": 22000,
+      "type": "expense",
+      "category": "Bills"
+    },
+    {
+      "id": 203,
+      "date": "2026-09-05",
+      "merchant": "Zomato Food Order",
+      "amount": 3500,
+      "type": "expense",
+      "category": "Food"
+    },
+    {
+      "id": 204,
+      "date": "2026-09-08",
+      "merchant": "Electricity & Wifi",
+      "amount": 2800,
+      "type": "expense",
+      "category": "Bills"
+    },
+    {
+      "id": 205,
+      "date": "2026-09-10",
+      "merchant": "Uber Travel",
+      "amount": 2200,
+      "type": "expense",
+      "category": "Transport"
+    },
+    {
+      "id": 206,
+      "date": "2026-09-15",
+      "merchant": "Freelance Design Project",
+      "amount": 25000,
+      "type": "income",
+      "category": "Freelance"
+    },
+    {
+      "id": 207,
+      "date": "2026-09-18",
+      "merchant": "Amazon Gadgets & Books",
+      "amount": 4800,
+      "type": "expense",
+      "category": "Shopping"
+    }
+  ],
+  "goals": [
+    {
+      "id": 301,
+      "name": "Emergency Fund",
+      "targetAmount": 200000,
+      "currentAmount": 140000,
+      "targetDate": "2026-12-31",
+      "category": "Emergency"
+    },
+    {
+      "id": 302,
+      "name": "Japan Travel Trip",
+      "targetAmount": 150000,
+      "currentAmount": 65000,
+      "targetDate": "2027-05-01",
+      "category": "Travel"
+    }
+  ],
+  "learnedMappings": {
+    "zomato": "Food",
+    "swiggy": "Food",
+    "uber": "Transport",
+    "amazon": "Shopping"
+  }
+}

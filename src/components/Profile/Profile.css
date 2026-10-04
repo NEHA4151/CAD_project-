@@ -1,0 +1,87 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.profile-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+[data-theme="dark"] .profile-card {
+    background: #1e1e1e;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.profile-header {
+    margin-bottom: 30px;
+}
+
+.profile-avatar {
+    background-color: #007bff;
+    color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0 auto 16px;
+}
+
+.profile-username {
+    margin: 0 0 8px;
+    color: #333;
+}
+
+[data-theme="dark"] .profile-username {
+    color: #e0e0e0;
+}
+
+.profile-label {
+    color: #666;
+}
+
+[data-theme="dark"] .profile-label {
+    color: #bcbcbc;
+}
+
+.profile-email {
+    color: #444;
+    margin: 0;
+}
+
+[data-theme="dark"] .profile-email {
+    color: #e0e0e0;
+}
+
+.profile-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.logout-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+}

@@ -1,0 +1,42 @@
+{
+  "assets": [
+    {
+      "name": "neha",
+      "type": "mutual_fund",
+      "quantity": "4",
+      "purchasePrice": "567",
+      "currentPrice": "600",
+      "broker": "Zerodha",
+      "brokerAccountId": "",
+      "currentValue": "2400.00",
+      "investmentAmount": "2268.00",
+      "profitLoss": "132.00",
+      "profitLossPercent": "5.82",
+      "id": 1788587731666
+    }
+  ],
+  "transactions": [],
+  "goals": [
+    {
+      "name": "laptop",
+      "targetAmount": 10000,
+      "currentAmount": 4000,
+      "deadline": "2026-09-26",
+      "type": "spend",
+      "dailyAmount": null,
+      "id": 1788587995021,
+      "progress": 0
+    },
+    {
+      "name": "Vacation",
+      "targetAmount": 45000,
+      "currentAmount": 10000,
+      "deadline": "2026-10-30",
+      "type": "save",
+      "dailyAmount": 500,
+      "id": 1788588225770,
+      "progress": 0
+    }
+  ],
+  "learnedMappings": {}
+}
