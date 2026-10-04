@@ -4,11 +4,26 @@ const express = require('express');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const { Pool } = require('pg');
 require('dotenv').config({ path: path.join(__dirname, '.env') });
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 const JWT_SECRET = process.env.JWT_SECRET || 'personal_finance_tracker_local_secret_key_2026';
+
+// --- PostgreSQL connection pool (used when DATABASE_URL is set for RDS) ---
+const pool = process.env.DATABASE_URL
+    ? new Pool({
+        connectionString: process.env.DATABASE_URL,
+        ssl: { rejectUnauthorized: false },
+    })
+    : null;
+
+if (pool) {
+    console.log('🐘 PostgreSQL pool initialized (RDS mode)');
+} else {
+    console.log('📁 No DATABASE_URL set — using local JSON file storage');
+}
 
 // --- Local Storage Paths ---
 const DATA_DIR = path.join(__dirname, 'data');
@@ -142,6 +157,7 @@ function authenticateToken(req, res, next) {
 }
 
 // --- Routes ---
+
 app.get('/', (req, res) => {
     res.json({
         status: 'ok',
@@ -150,7 +166,30 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/api/health', (req, res) => {
+// ALB target group health check endpoint
+app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
+// Extended health check (database connectivity info)
+app.get('/api/health', async (req, res) => {
+    if (pool) {
+        try {
+            await pool.query('SELECT 1');
+            return res.json({
+                status: 'healthy',
+                database: 'postgresql_rds',
+                timestamp: new Date().toISOString()
+            });
+        } catch (err) {
+            return res.status(500).json({
+                status: 'unhealthy',
+                database: 'postgresql_rds',
+                error: err.message,
+                timestamp: new Date().toISOString()
+            });
+        }
+    }
     const users = getUsers();
     res.json({
         status: 'healthy',
@@ -158,6 +197,19 @@ app.get('/api/health', (req, res) => {
         usersCount: users.length,
         timestamp: new Date().toISOString()
     });
+});
+
+// Database connectivity test endpoint
+app.get('/api/test-db', async (req, res) => {
+    if (pool) {
+        try {
+            await pool.query('SELECT 1');
+            return res.json({ success: true, postgres: true });
+        } catch (err) {
+            return res.status(500).json({ error: 'DB connection failed', details: err.message });
+        }
+    }
+    return res.json({ success: true, postgres: false, mode: 'local_json_db' });
 });
 
 // Signup Route
